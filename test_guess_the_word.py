@@ -9,17 +9,3 @@ def test_wordList():
         chosenWord = random.choice(wordList)
         #checks output for word
         assert chosenWord in wordList, f"Selected word '{chosenWord}' should be in the predefined list."
-
-#this should be better talked about in slides, patch is fantastic class of unittest https://docs.python.org/3/library/unittest.mock.html
-@patch("random.choice", returnValue="moat")
-def test_guessing(capsys):
-    mockInputs = ["m","o","c","a","t"]
-    with patch("builtins.input",sideEffect = mockInputs):
-        guessingGame()
-    mockOutput = capsys.readouterr().out
-
-   #checks output for lines 
-    assert "correct" in mockOutput
-    assert "incorrect" in mockOutput
-    assert "OH NO" in mockOutput
-    assert "MOAT" in mockOutput

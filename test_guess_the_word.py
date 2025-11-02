@@ -1,5 +1,4 @@
 import random
-from unittest.mock import patch
 from guess_the_word import guessingGame
 
 #checks the selected word comes from the predefined list.
